@@ -3,6 +3,23 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[ViewController previousButtonAction]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.upc1TextField.text">
+            </PersistentString>
+            <PersistentString
+               value = "[self.currentItemIndex intValue]">
+            </PersistentString>
+            <PersistentString
+               value = "[self.totalItems intValue]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController addItem]:ViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[ViewController nextButtonAction]:ViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -11,10 +28,10 @@
             <PersistentString
                value = "[self.currentItemIndex intValue]">
             </PersistentString>
+            <PersistentString
+               value = "self.upc1TextField.text">
+            </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[ViewController addItem]:ViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[ViewController pocketsphinxDidReceiveHypothesis:recognitionScore:utteranceID:]:ViewController.m">

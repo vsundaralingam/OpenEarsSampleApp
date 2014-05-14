@@ -177,7 +177,7 @@
    [self.view addSubview: activityIndicatorView];
    self.statusLabel.Hidden = true;
    statusLabel.layer.cornerRadius = 8;
-   self.previousButton.hidden = true;
+   [self updateItemsCountLabel];
    
 }
 
@@ -428,18 +428,10 @@
 
 - (IBAction) nextButtonAction
 {
-   
-   if([self.currentItemIndex intValue] >= [self.totalItems intValue]){
+   if([self.currentItemIndex intValue] == [items count] ){
       [self addItem];
       [self clearInputs];
-      
-      
-      
-      int value = [self.currentItemIndex intValue];
-      self.currentItemIndex = [NSNumber numberWithInt:value + 1];
-      
-      value = [self.totalItems intValue];
-      self.totalItems = [NSNumber numberWithInt:value + 1];
+      [self incrementItemsCount];
    }
    else
    {
@@ -460,6 +452,8 @@
          }
          else
          {
+            value = [self.totalItems intValue];
+            self.totalItems = [NSNumber numberWithInt:value + 1];
             [self clearInputs];
          }
    }
@@ -469,7 +463,7 @@
 
 - (IBAction) previousButtonAction
 {
-   if([self.currentItemIndex intValue] >= [self.totalItems intValue]){
+   if([self.currentItemIndex intValue] == [items count]){
       [self addItem];
    }
    else
@@ -503,6 +497,8 @@
    newItem.image = self.imageView.image;
 
    [items addObject: newItem];
+   
+   
 }
 
 -(void) clearInputs
@@ -544,7 +540,7 @@
 
 -(void) updateItemsCountLabel
 {
-   self.itemsCountLabel.text = [NSString stringWithFormat:@"Current/Total:     %d/%d", ([self.currentItemIndex intValue]+ 1), ([self.totalItems intValue] + 1)];
+   self.itemsCountLabel.text = [NSString stringWithFormat:@"Current/Total:     %d/%d", ([self.currentItemIndex intValue]+ 1), ([self.totalItems intValue]+ 1)];
    if([self.currentItemIndex intValue] == 0)
       self.previousButton.hidden = true;
    else
@@ -574,6 +570,15 @@
       [self resumeListeningButtonAction];
    }
    
+}
+
+-(void) incrementItemsCount
+{
+   int value = [self.currentItemIndex intValue];
+   self.currentItemIndex = [NSNumber numberWithInt:value + 1];
+   
+   value = [self.totalItems intValue];
+   self.totalItems = [NSNumber numberWithInt:value + 1];
 }
 
 
