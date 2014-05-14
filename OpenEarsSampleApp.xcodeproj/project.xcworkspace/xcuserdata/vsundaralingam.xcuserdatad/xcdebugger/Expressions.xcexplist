@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[ViewController nextButtonAction]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[items count]">
+            </PersistentString>
+            <PersistentString
+               value = "[self.currentItemIndex intValue]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController addItem]:ViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController pocketsphinxDidReceiveHypothesis:recognitionScore:utteranceID:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "valid">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
